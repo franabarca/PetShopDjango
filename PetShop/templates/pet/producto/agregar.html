@@ -1,0 +1,45 @@
+{% extends 'pet/base.html'%}
+
+{% block contenido %}
+
+{% load crispy_forms_tags %}
+<br><br><br><br>
+
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h2>Agregar Producto</h2>
+
+            <hr>
+                    <form action="" class="" method="post" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+
+                        {{form | crispy}}
+
+                        <hr>
+                        <div class="d-flex justify-content-end">
+                        <a type="button" class="btn btn-success" href="{%url 'listar_productos'%}">Volver</a>
+                        &nbsp;
+                        <input type="reset" value="Limpiar" class="btn btn-secondary">
+                        &nbsp;
+                        
+
+                        <button type="submit"  class="btn btn-primary">Enviar</button>
+                        </div>
+                    
+                    </form>
+    <br>
+
+
+</div>
+</div>
+</div>
+</div>
+    
+
+{% endblock %}

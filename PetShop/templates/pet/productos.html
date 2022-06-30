@@ -1,0 +1,51 @@
+{% extends 'pet/base.html'%}
+
+{% block contenido %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{%load humanize%}
+  <section id="cartas">
+    <div class="container">
+      <div class="row g-3">
+
+        {% for p in productos%}
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card">
+            {% if p.imagen %}
+            <img src="{{ p.imagen.url }}" class="card-img-top" alt="...">
+            {% endif %}
+            <div class="card-body">
+              
+              <h6 class="card-text">{{p.marca}}</p>
+
+              <h5 class="card-text">{{p.nombre}}</p>
+
+              <h4 class="card-text">{{p.descripcion}}</p>
+
+              <h3 class="card-title">${{p.precio | intcomma}}</h5>
+
+            </div>
+
+
+            <div class="card-footer">
+              <small class="text-muted">              
+                <a href="#" class="btn btn-primary">Añadir al carrito</a>
+              </small>
+          </div>
+        </div>
+      </div>
+
+      {% endfor%}
+   
+  </section>
+
+
+{% endblock %}
+
